@@ -1,1 +1,1 @@
-# GSMTP-Auto
+## Auto send mail to stu
