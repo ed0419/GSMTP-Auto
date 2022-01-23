@@ -8,11 +8,11 @@ import smtplib, json
 with open('settings.json','r',encoding='utf8') as jFile:
     jdata = json.load(jFile)
 
-def sendmail(name,mcemail,mcpass):
+def send2(tomail,name,mcemail,mcpass):
     content = MIMEMultipart()  #建立MIMEMultipart物件
     content["subject"] = "中部資電寒訓資料測試"  #郵件標題
     content["from"] = "taichungcomputer@gmail.com"  #寄件者
-    content["to"] = "genden80@gmail.com" #收件者
+    content["to"] = tomail #收件者
     #content.attach(MIMEText("Demo python send email"))  #郵件內容
     #content.attach(MIMEImage(Path("112314.jpg").read_bytes()))  # 郵件圖片內容
 
@@ -30,4 +30,3 @@ def sendmail(name,mcemail,mcpass):
         except Exception as e:
             print("Error message: ", e)
 
-sendmail("HI","iloveu@gmail.com","iiiiiii")
