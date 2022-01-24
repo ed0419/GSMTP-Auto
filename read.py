@@ -1,11 +1,11 @@
-import csv
+import csv, time
 from sendmail import send2
 # 開啟 CSV 檔案
-with open('test', newline='', encoding = 'utf-8') as csvfile:
+with open('test', newline='', encoding = 'utf-8') as csvfile_stu:
 
     # 以冒號分隔欄位，讀取檔案內容 , delimiter='  '
-    rows_stu = list(csv.reader(csvfile))
-    with open('mc25', newline='', encoding = 'utf-8') as csvfile_acc:
+    rows_stu = list(csv.reader(csvfile_stu))
+    with open('mc25.acc', newline='', encoding = 'utf-8') as csvfile_acc:
         rows_acc = list(csv.reader(csvfile_acc))
 
         # 以迴圈輸出每一列
@@ -16,4 +16,3 @@ with open('test', newline='', encoding = 'utf-8') as csvfile:
             mcpass = rows_acc[i][1]
             print(tomail,name,mcemail,mcpass)
             send2(tomail,name,mcemail,mcpass)
-            

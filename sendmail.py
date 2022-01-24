@@ -10,7 +10,7 @@ with open('settings.json','r',encoding='utf8') as jFile:
 
 def send2(tomail,name,mcemail,mcpass):
     content = MIMEMultipart()  #建立MIMEMultipart物件
-    content["subject"] = "中部資電寒訓資料測試"  #郵件標題
+    content["subject"] = f"中部電資寒訓 ({name}專屬)"  #郵件標題
     content["from"] = "taichungcomputer@gmail.com"  #寄件者
     content["to"] = tomail #收件者
     #content.attach(MIMEText("Demo python send email"))  #郵件內容
